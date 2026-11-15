@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>LUMEN KEEP - hold the last light</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #062027;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Fixed 1280x480 playfield, letterboxed to the window. */
+  #game {
+    display: block;
+    width: min(100vw, 266.6667vh);
+    height: min(100vh, 37.5vw);
+    image-rendering: auto;
+    touch-action: none;
+    cursor: crosshair;
+    background: #0d2b33;
+  }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="480" aria-label="LUMEN KEEP: defend the last beacon. Move with WASD, aim with the mouse, hold click to fire light bolts, Space to dash."></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
